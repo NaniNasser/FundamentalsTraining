@@ -13,8 +13,6 @@ public class Plant {
         this.height = height;
     }
 
-   
-
     public String getName() {
         return name;
     }
