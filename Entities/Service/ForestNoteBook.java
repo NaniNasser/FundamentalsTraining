@@ -6,6 +6,7 @@ import Entities.animal_entities.Herbivore;
 import Entities.animal_entities.Omnivore;
 import Entities.plant_entities.Plant;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -56,29 +57,37 @@ public class ForestNoteBook {
     }
 
     public void addAnimal(Animal animal) {
+       
+        this.animals.forEach(a -> {
+            if(a.getName().equals(animal.getName())) {
+                return;
+
+            }
+        });
         this.animals.add(animal);
     }
 
-    public void printNoteBook() {
-        this.printNoteBook();
-    }
 
     public void sortAnimalsByName() {
-        this.sortAnimalsByName();
+
     }
+
+
 
     public void sortPlantsByName() {
         this.sortPlantsByName();
     }
 
-    public void printNotebook() {
-        this.animals.forEach(animal -> {
-            System.out.println(animal.toString());
+
+    public void printNoteBook() {
+            this.animals.forEach(animal -> {
+                System.out.println(animal.toString());
             this.plants.forEach(plant -> {
                 System.out.println(plant.toString());
             });
-
         });
+
+
     }
 }
 
