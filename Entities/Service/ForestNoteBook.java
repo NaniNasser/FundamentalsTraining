@@ -22,6 +22,7 @@ public class ForestNoteBook {
     private List<Plant> plants;
 
     public ForestNoteBook() {
+        animals = new ArrayList<Animal>();
     }
 
     public List<Carnivore> getCarnivore() {
@@ -57,7 +58,7 @@ public class ForestNoteBook {
     }
 
     public void addAnimal(Animal animal) {
-       
+        animals = new ArrayList<Animal>();
         this.animals.forEach(a -> {
             if(a.getName().equals(animal.getName())) {
                 return;

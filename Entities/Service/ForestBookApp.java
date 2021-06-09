@@ -26,6 +26,8 @@ public class ForestBookApp {
         forestNoteBook.addAnimal(lion);
         forestNoteBook.addAnimal(elephant);
 
+        forestNoteBook.printNoteBook();
+
 
 
 
