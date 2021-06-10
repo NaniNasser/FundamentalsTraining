@@ -1,6 +1,7 @@
 package Entities.Service;
 
 import Entities.animal_entities.Animal;
+import Entities.animal_entities.Herbivore;
 import Entities.plant_entities.Plant;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class ForestBookApp {
 
 
        ForestNoteBook forestNoteBook = new ForestNoteBook();
-       forestNoteBook.addAnimal(dog);
+        forestNoteBook.addAnimal(dog);
         forestNoteBook.addAnimal(wolf);
         forestNoteBook.addAnimal(tiger);
         forestNoteBook.addAnimal(lion);
