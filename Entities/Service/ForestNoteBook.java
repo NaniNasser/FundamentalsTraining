@@ -18,9 +18,9 @@ public class ForestNoteBook {
 
     private int plantCount;
     private int animalCount;
-    private List<Carnivore> carnivore;
-    private List<Omnivore> omnivore;
-    private List<Herbivore> herbivore;
+    private List<Carnivore> carnivores;
+    private List<Omnivore> omnivores;
+    private List<Herbivore> herbivores;
     private List<Animal> animals;
     private List<Plant> plants;
 
@@ -28,26 +28,26 @@ public class ForestNoteBook {
     public ForestNoteBook() {
         plants = new ArrayList<>();
         animals = new ArrayList<>();
-        omnivore = new ArrayList<>();
-        carnivore = new ArrayList<>();
-        herbivore = new ArrayList<>();
+        omnivores = new ArrayList<>();
+        carnivores = new ArrayList<>();
+        herbivores = new ArrayList<>();
     }
 
-    public List<Carnivore> getCarnivore() { return carnivore.stream().distinct().collect(Collectors.toList());}
-    public List<Omnivore> getOmnivore() { return omnivore.stream().distinct().collect(Collectors.toList());}
-    public List<Herbivore> getHerbivore() {return herbivore.stream().distinct().collect(Collectors.toList());}
+    public List<Carnivore> getCarnivore() { return carnivores.stream().distinct().collect(Collectors.toList());}
+    public List<Omnivore> getOmnivore() { return omnivores.stream().distinct().collect(Collectors.toList());}
+    public List<Herbivore> getHerbivore() {return herbivores.stream().distinct().collect(Collectors.toList());}
 
 
-    public void setCarnivore(List<Carnivore> carnivore) { this.carnivore = carnivore; }
-    public void setOmnivore(List<Omnivore> omnivore) { this.omnivore = omnivore; }
-    public void setHerbivore(List<Herbivore> herbivore) { this.herbivore = herbivore; }
+    public void setCarnivore(List<Carnivore> carnivore) { this.carnivores = carnivore; }
+    public void setOmnivore(List<Omnivore> omnivore) { this.omnivores = omnivore; }
+    public void setHerbivore(List<Herbivore> herbivore) { this.herbivores = herbivore; }
 
 
     public int getPlantCount() {
         return plantCount;
     }
-    public int getAmimalCount() {
-        return amimalCount;
+    public int getAnimalCount() {
+        return animalCount;
     }
 
 
@@ -55,28 +55,28 @@ public class ForestNoteBook {
     public void addAnimal(Animal animal) {
 // check for duplicates
 
-        this.animals.forEach(a -> {
+            this.animals.forEach(a -> {
             if(a.getName().equals(animal.getName())) {
                 return;
             }
-        });
+                });
 
 // if no duplicates, add to main animals list
-        this.animals.add(animal);
+             this.animals.add(animal);
 
 // determine what kind of animal it is and add to the proper list
-        this.animals.forEach(a -> {
-            if (animal is carnivore) {
-        this.carnivores.add(animal);
+
+            if (animal instanceof Carnivore) {
+                 this.carnivores.add(animal);
         }
-            else if (animal is herbivore) {
-        this.herbivores.add(animal);
+            else if (animal instanceof Herbivore) {
+                 this.herbivores.add(animal);
 }
-            else if (animal is omnivore) {
-        this.omnivores.add(animal);
+            else if (animal instanceof Omnivore) {
+                 this.omnivores.add(animal);
 }
 
-    });
+    };
 
 
 
@@ -93,9 +93,9 @@ public class ForestNoteBook {
 
 
     public void printNoteBook() {
-            this.animals.forEach(animal -> {
+                this.animals.forEach(animal -> {
                 System.out.println(animal.toString());
-            this.plants.forEach(plant -> {
+                this.plants.forEach(plant -> {
                 System.out.println(plant.toString());
             });
         });
