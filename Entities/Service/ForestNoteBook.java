@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 
 public class ForestNoteBook {
 
-
     private int plantCount;
     private int animalCount;
     private List<Carnivore> carnivores;
@@ -23,14 +22,19 @@ public class ForestNoteBook {
     private List<Herbivore> herbivores;
     private List<Animal> animals;
     private List<Plant> plants;
+    private List<Plant> plantsDiet;
+
+
 
 
     public ForestNoteBook() {
+        plantsDiet = new ArrayList<>();
         plants = new ArrayList<>();
         animals = new ArrayList<>();
         omnivores = new ArrayList<>();
         carnivores = new ArrayList<>();
         herbivores = new ArrayList<>();
+
     }
 
     public List<Carnivore> getCarnivore() { return carnivores.stream().distinct().collect(Collectors.toList());}
@@ -67,13 +71,13 @@ public class ForestNoteBook {
 // determine what kind of animal it is and add to the proper list
 
             if (animal instanceof Carnivore) {
-                 this.carnivores.add(animal);
+                 this.carnivores.add(((Carnivore) animal));
         }
             else if (animal instanceof Herbivore) {
-                 this.herbivores.add(animal);
+                 this.herbivores.add(((Herbivore) animal));
 }
             else if (animal instanceof Omnivore) {
-                 this.omnivores.add(animal);
+                 this.omnivores.add(((Omnivore) animal));
 }
 
     };
@@ -92,6 +96,9 @@ public class ForestNoteBook {
     }
 
 
+
+
+
     public void printNoteBook() {
                 this.animals.forEach(animal -> {
                 System.out.println(animal.toString());
@@ -99,6 +106,7 @@ public class ForestNoteBook {
                 System.out.println(plant.toString());
             });
         });
+
 
 
     }

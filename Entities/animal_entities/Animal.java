@@ -6,10 +6,7 @@ public class Animal {
     private double height;
     private double length;
 
-    public Animal(String name) {
-        this.name = name;
 
-    }
 
     public Animal(String name, double weight, double height, double length) {
         this.name = name;
@@ -55,6 +52,8 @@ public class Animal {
 
     public void compare (String name) { this.name = name;}
 
+
 }
+
 
 

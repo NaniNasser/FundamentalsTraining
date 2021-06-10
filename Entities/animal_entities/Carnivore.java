@@ -4,9 +4,7 @@ public class Carnivore extends Animal{
     private double maxFoodSize;
 
 
-    public Carnivore(String name) {
-        super(name);
-    }
+
 
     public Carnivore(String name, double weight, double height, double length) {
         super(name, weight, height, length);
@@ -23,7 +21,7 @@ public class Carnivore extends Animal{
     @Override
     public String toString() {
         return "Carnivore{" +
-                "maxFoodSize=" + maxFoodSize +
+                "maxFoodSize=" + maxFoodSize + ", " + getName() + ", " + getWeight() + ", " + getHeight() + ", "  + getLength() +
                 '}';
     }
 }
